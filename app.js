@@ -12,9 +12,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 // 引入编辑路由模块
 var articleRouter = require('./routes/articles');
+// 引入icon图标模板
+var favicon = require('serve-favicon')
 
 var app = express();
 
+// favicon配置
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
